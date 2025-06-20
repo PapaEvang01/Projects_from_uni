@@ -50,4 +50,12 @@ An **ESP32** is used as the main controller. It:
 ## 📁 Project Structure
 
 This project is implemented in a **single Arduino sketch**:
+WeatherDisplaySystem.ino
 
+
+It includes:
+- Wi-Fi setup and API request logic
+- JSON parsing
+- Value mapping and actuator control (LEDs, servo, vibrator)
+
+---
