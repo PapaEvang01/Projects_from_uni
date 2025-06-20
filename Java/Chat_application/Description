@@ -14,6 +14,9 @@ This is a command-line group chat application built in Java using TCP sockets.
 Each client can join the chat by logging in or registering. Messages are broadcast to all clients.
 The server handles each client in a separate thread.
 
+This project was developed in the Eclipse IDE and uses the default Eclipse workspace structure.
+
+
 ------------------------------------------------------
 🛠️ Features
 ------------------------------------------------------
