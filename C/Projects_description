@@ -1,8 +1,9 @@
 My First Steps in C Programming 🧠💻
 
 Back in my first year of university, I got my first real taste of programming through the C language. I spent hours learning, failing, debugging, 
-and slowly building confidence by completing small but meaningful projects. These three mini-projects were the ones that challenged me the most — and taught me the core principles of structured coding,
+and slowly building confidence by completing small but meaningful projects. These three mini-projects were taught me the core principles of structured coding,
 logic, and data handling. Here's what I built:
+
 
 1. 🧮 Terminal Calculator in C
 A single-file, terminal-based calculator that parses full mathematical expressions using the Shunting Yard Algorithm.
@@ -20,6 +21,7 @@ Interactive commands: q to quit, c to clear
 
 📌 What I learned: expression parsing, stack-based evaluation, and the magic of turning raw input into meaningful computation.
 
+
 2. 🗂️ Student Record Management System
 A small terminal-based tool to manage student data with options to:
 
@@ -34,6 +36,7 @@ Export all records to .csv for Excel use
 All data is stored in a local binary file (students.dat) for persistence between sessions.
 
 📌 What I learned: file I/O in C, working with structs, and building practical CRUD systems.
+
 
 3. ✅ To-Do List (Terminal C Project)
 A feature-rich, terminal-based task manager that lets you:
@@ -51,5 +54,6 @@ Save and load all data from file
 Color-coded output for better readability
 
 📌 What I learned: user input handling, sorting algorithms, real-time date comparisons, and building a user-friendly interface using only the terminal.
+
 
 These three projects may be small, but they taught me the foundations of problem-solving and programming logic that I still use today.

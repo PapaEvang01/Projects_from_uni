@@ -1,6 +1,7 @@
 # 🌦️ Weather Condition Display System - Arduino ESP32
 
-This project demonstrates how to create a smart environmental feedback system using real-time weather data from a public API. It combines **visual, physical, and tactile** feedback using multiple actuators controlled by an ESP32-based Arduino board.
+This project demonstrates how to create a smart environmental feedback system using real-time weather data from a public API.
+ It combines **visual, physical, and tactile** feedback using multiple actuators controlled by an ESP32-based Arduino board.
 
 ---
 

@@ -1,5 +1,4 @@
 🗂️ Student Record Management System – C Project
-This was one of those projects where I started feeling like I could actually build something useful with code.
 It’s a small terminal-based tool I made in C to manage basic student records — sort of like a mini database system but all local.
 
 You can:
@@ -16,6 +15,7 @@ You can:
 
 💾 All data is saved in a local binary file (students.dat), so everything stays intact even after you close the program.
 
+
 📌 What I learned
 This was my hands-on intro to:
 
@@ -27,6 +27,6 @@ Implementing a basic CRUD (Create, Read, Update, Delete) system
 
 It might look small, but it taught me how real software keeps data persistent — and how the terminal can still be a powerful tool when you make it interactive.
 
+
 🛠️ Built using Code::Blocks on Windows with gcc.
 
-This project gave me a good taste of what “data management” means in code — and laid the groundwork for bigger ideas later on.

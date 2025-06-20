@@ -1,7 +1,9 @@
 # 🛠️ Arduino Projects
 
-These two Arduino-based projects demonstrate my practical skills in **embedded systems**, **sensor integration**, **actuator control**, **real-time data handling**, and **IoT development**. 
-Both systems were designed, coded, and tested using the **ESP32** microcontroller, showcasing my ability to build **modular**, **interactive**, and **responsive** hardware solutions from concept to implementation.
+These two Arduino-based projects demonstrate my practical skills in **embedded systems**, **sensor integration**, **actuator control**, 
+**real-time data handling**, and **IoT development**. 
+Both systems were designed, coded, and tested using the **ESP32** microcontroller, showcasing my ability to build **modular**, 
+**interactive**, and **responsive** hardware solutions from concept to implementation.
 
 > These projects were developed during my **Erasmus program at the University of Deusto, Spain**, and reflect foundational yet important skills in Arduino and physical computing.
 
@@ -77,5 +79,3 @@ They cover essential domains such as:
 - Sensor-actuator synchronization
 - API integration and parsing
 - Arduino + ESP32 development
-
-> 🔧 These are foundational, hands-on demonstrations of my growing expertise in hardware-based systems.

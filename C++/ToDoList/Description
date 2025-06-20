@@ -22,5 +22,3 @@ It even calculates how many days are left until each task is due — or marks it
 
 🛠️ Built in pure C using the terminal and a lot of `printf()` magic.
 
-This project pushed me to think beyond simple loops and conditions.
-It made me realize that even basic C programs can feel polished and useful — if you take the time to design them right.

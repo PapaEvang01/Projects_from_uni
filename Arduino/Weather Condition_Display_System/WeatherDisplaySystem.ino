@@ -38,8 +38,8 @@ Servo myservo;
 LiquidCrystal_I2C lcd(0x3F, 16, 2);
 
 // === Wi-Fi Credentials ===
-const char* ssid = "iPhone - Σωτήρης";
-const char* password = "23122002G4";
+const char* ssid = "iPhone - Σωτήρης"; //replace it with your
+const char* password = "23122002G4"; //same here
 
 // === Weather API Configuration ===
 String URL = "http://api.openweathermap.org/data/2.5/weather?";
