@@ -1,1 +1,29 @@
+🎓 Java Projects from My Early University Days
 
+In my early years of university, I had the opportunity to explore Java programming through two hands-on projects —
+one focused on graph theory and the other on real-time networking.
+These projects helped me build a strong foundation in algorithms, data structures, and socket programming.
+
+📊 Graph Algorithms & Visualization
+
+This project demonstrates core graph concepts using Java and Graphviz. It generates a random weighted graph and applies key algorithms like:
+
+BFS & DFS for traversal
+
+Dijkstra’s Algorithm for shortest paths
+
+Prim’s Algorithm for minimum spanning tree
+
+The entire graph and results are visualized in PNG images using DOT/Graphviz. This was a great introduction to both Java collections and visual debugging of algorithms.
+
+💬 Java Socket Group Chat App
+
+A command-line group chat system using TCP sockets. Users can register or log in and chat in real time. Features include:
+
+Multi-client communication via threads
+
+Simple file-based user login (users.txt)
+
+Timestamps, welcome messages, and graceful exits
+
+Built using Eclipse, it gave me solid practice in Java networking and thread synchronization — and it was surprisingly fun to see live communication working from the console.
