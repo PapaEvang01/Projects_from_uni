@@ -4,7 +4,7 @@ Back in my first year of university, I got my first real taste of programming th
 and slowly building confidence by completing small but meaningful projects. These three mini-projects were the ones that challenged me the most — and taught me the core principles of structured coding,
 logic, and data handling. Here's what I built:
 
-🧮 Terminal Calculator in C
+1. 🧮 Terminal Calculator in C
 A single-file, terminal-based calculator that parses full mathematical expressions using the Shunting Yard Algorithm.
 It supports:
 
@@ -20,7 +20,7 @@ Interactive commands: q to quit, c to clear
 
 📌 What I learned: expression parsing, stack-based evaluation, and the magic of turning raw input into meaningful computation.
 
-🗂️ Student Record Management System
+2. 🗂️ Student Record Management System
 A small terminal-based tool to manage student data with options to:
 
 Add new students (first name, last name, roll number)
@@ -35,7 +35,7 @@ All data is stored in a local binary file (students.dat) for persistence between
 
 📌 What I learned: file I/O in C, working with structs, and building practical CRUD systems.
 
-✅ To-Do List (Terminal C Project)
+3. ✅ To-Do List (Terminal C Project)
 A feature-rich, terminal-based task manager that lets you:
 
 Add tasks with descriptions, priorities, categories, and deadlines
