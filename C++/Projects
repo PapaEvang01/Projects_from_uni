@@ -1,0 +1,42 @@
+🎓 C++ Projects from My Uni Days
+
+These two projects were built during my second semester at university — one of my first real encounters with C++.
+I wanted to challenge myself with both logic-based AI and real-time image processing, and these small but fun projects helped me grow a lot as a developer.
+
+🎮 Tic-Tac-Toe (with AI)
+A terminal-based Tic-Tac-Toe game written in clean C++. You can play against the computer with three difficulty levels:
+
+Easy: random moves
+
+Medium: blocks your winning moves
+
+Hard: uses the Minimax algorithm to play perfectly (unbeatable!)
+
+You can choose to play first or second, and input moves like A1, C2, etc.
+It was my first time implementing a full AI logic tree — and it really helped me understand how decision-making works in code.
+
+🤳 SmartSelfie (with OpenCV)
+This one’s more visual: a webcam-based app that captures a selfie and applies face detection + image filters using OpenCV.
+
+Shows live webcam preview
+
+Press SPACE to take a photo
+
+Detects faces using a Haar Cascade and draws rectangles
+
+Saves three versions:
+
+the original photo
+
+a face-detected version
+
+a grayscale + blurred version
+
+It was my first real dive into computer vision, and it showed me how powerful C++ can be when paired with libraries like OpenCV.
+
+Together, these two projects reflect a nice balance between algorithmic thinking and practical coding.
+Tic-Tac-Toe taught me about game logic and AI decision-making, while SmartSelfie opened the door to real-time image processing and working with hardware (like the webcam).
+
+🛠️ Both projects were developed in Visual Studio on Windows.
+
+They marked a turning point — when C++ finally started to make sense, and coding became something I genuinely loved doing.
