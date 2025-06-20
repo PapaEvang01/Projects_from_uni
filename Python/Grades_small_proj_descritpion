@@ -5,6 +5,9 @@ My first taste in Python programming!
 During my second year at university, one of my tasks was to build a simple program 
 that could check whether I (or other students) passed an exam based on our grades.
 
+I developed and tested this project using the PyCharm IDE.
+
+
 So, I created two small programs:
 
 1. pass_AEM.py
