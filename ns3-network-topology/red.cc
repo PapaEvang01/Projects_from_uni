@@ -78,10 +78,6 @@ TraceCwnd ()    // Trace changes to the congestion window
 
 }
 
-
-
-
-
 int main (int argc, char *argv[])
 {
   // Set simulation parameters
@@ -102,8 +98,14 @@ int main (int argc, char *argv[])
   uint32_t maxBytes = 0;       // 0 means "unlimited"
   uint32_t meanPktSize = 500;
 
+  CommandLine cmd;
+  cmd.AddValue("linkBW", "Bandwidth of A-C and B-C links (Mbps)", linkBW);
+  cmd.AddValue("CDlinkBW", "Bandwidth of C-D link (Mbps)", CDlinkBW);
+  cmd.AddValue("queuesize", "Queue size at C-D (in packets)", queuesize);
+  cmd.AddValue("runtime", "Simulation runtime in seconds", runtime);
+  cmd.Parse(argc, argv);
+  
   std::cout << "queuesize=" << queuesize << ", linkBW=" << linkBW << ", CDlinkBW=" << CDlinkBW << std::endl;
-
 
   Ptr<Node> A = CreateObject<Node> ();
   Ptr<Node> B = CreateObject<Node> ();
@@ -237,5 +239,13 @@ QueueDiscContainer queueDiscs = tchRed.Install (Cdev3);
 
   Ptr<PacketSink> sink1 = DynamicCast<PacketSink> (sinkApp.Get (0));
   std::cout << "Total Bytes Received from sink: " << sink1->GetTotalRx () << std::endl;
+  std::cout << "\n=== Simulation Summary ===" << std::endl;
+  std::cout << "Simulation Time: " << runtime << " s" << std::endl;
+  std::cout << "TCP Segment Size: " << tcpSegmentSize << " bytes" << std::endl;
+  std::cout << "Link A-C/B-C Bandwidth: " << linkBW << " Mbps" << std::endl;
+  std::cout << "Link C-D Bandwidth: " << CDlinkBW << " Mbps" << std::endl;
+  std::cout << "Queue Size at C-D: " << queuesize << " packets" << std::endl;
+  std::cout << "RED Parameters: MinTh=2, MaxTh=8, QW=0.002, Gentle=1, Wait=1" << std::endl;
+
   return 0;
 }
