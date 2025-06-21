@@ -1,5 +1,3 @@
-/* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
-
 /*
   Network topology:
 
@@ -10,13 +8,37 @@ A--------------C--------------D
                |
                B
 
+A--C: 1+z Mbps / 10 ms delay  
+B--C: 1+z Mbps / 5 ms delay  
+C--D: 10-z Mbps / 10 ms delay  
+Queue at C--D: size 10+y  
 
-A--C: 1+z Mbps / 10 ms delay
-B--C: 1+z Mbps / 5 ms delay
-C--D: 10-z Mbps / 10 ms delay
-queue at C--D: size 10+y
+---------------------------------------------------------
+Simulation Overview:
+---------------------------------------------------------
+This NS-3 simulation models TCP congestion behavior in a simple 4-node network
+with RED (Random Early Detection) queue management enabled at the C–D bottleneck.
 
+- Nodes A and B send bulk TCP traffic to node D.
+- RED is used instead of the default DropTail queue on the C–D link.
+- RED helps avoid congestion by probabilistically dropping packets *before*
+  the queue overflows, based on average queue size.
+- The configuration uses gentle mode, average packet size, and min/max thresholds.
+
+Key RED parameters:
+- MinTh = 2 packets, MaxTh = 8 packets
+- QW = 0.002 (exponential weighted moving average factor)
+- Gentle = true, Wait = true
+
+Outputs:
+- sourceA.cwnd / sourceB.cwnd: Congestion window over time
+- ASCII trace file: Packet events
+- Console summary of simulation parameters and performance
+
+To run with custom settings:
+  ./waf --run "red --linkBW=6 --CDlinkBW=5 --queuesize=17 --runtime=20"
 */
+
 
 #include <iostream>
 #include <fstream>
