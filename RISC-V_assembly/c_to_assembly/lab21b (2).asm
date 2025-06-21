@@ -1,3 +1,36 @@
+# ================================================================
+# 🧮 Row Sum of a 2D Array in RISC-V Assembly
+# ================================================================
+# This program implements in RISC-V Assembly a classic C function
+# that calculates the sum of each row in a two-dimensional array.
+# It was developed as part of a university lab exercise.
+#
+# 🔁 Translated C equivalent:
+# const int N = 2;
+# const int M = 3;
+# int a[N][M] = {342, 654, 263, 463, 975, 378};
+# int rows_sum[N];
+#
+# void compute_row_sum(int a[N][M], int rows_sum[N]) {
+#     for (int i = 0; i < N; i++) {
+#         rows_sum[i] = 0;
+#         for (int j = 0; j < M; j++) {
+#             rows_sum[i] += a[i][j];
+#         }
+#     }
+# }
+#
+# int main() {
+#     compute_row_sum(a, rows_sum);
+# }
+#
+# 🛠️ The implementation demonstrates key low-level concepts in RISC-V:
+# memory addressing, nested loops, load/store operations, and register
+# arithmetic. It processes the 2D array row by row and stores the result
+# in an output array.
+#
+# ================================================================
+
 .data
 rows:       .word 2
 cols:       .word 3
