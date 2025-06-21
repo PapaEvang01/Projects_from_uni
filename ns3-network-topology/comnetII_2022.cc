@@ -1,5 +1,3 @@
-/* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
-
 /*
   Network topology:
 
@@ -10,13 +8,33 @@ A--------------C--------------D
                |
                B
 
-
 A--C: 1+z Mbps / 10 ms delay
 B--C: 1+z Mbps / 5 ms delay
 C--D: 10-z Mbps / 10 ms delay
 queue at C--D: size 10+y
 
+---------------------------------------------------------
+Simulation Overview:
+---------------------------------------------------------
+This NS-3 simulation models a simple 4-node network to study TCP behavior 
+under different queuing disciplines and link capacities.
+
+- Nodes A and B send bulk TCP traffic to node D.
+- The path bottleneck is the link between C and D.
+- DropTail queue is used at C-D by default (can be swapped for RED).
+- Congestion window (cwnd) traces are collected for both flows.
+- Simulation parameters (bandwidth, queue size, runtime) can be modified
+  via command-line arguments.
+
+Outputs:
+- sourceA.cwnd / sourceB.cwnd: Congestion window evolution
+- ASCII trace file: Packet-level events
+- Console: Total received bytes + simulation summary
+
+Try:
+  ./waf --run "original --linkBW=3 --CDlinkBW=6 --queuesize=10 --runtime=30"
 */
+
 
 #include <iostream>
 #include <fstream>
@@ -62,23 +80,34 @@ TraceCwnd ()    // Trace changes to the congestion window
 int main (int argc, char *argv[])
 {
   // Set simulation parameters
-  int tcpSegmentSize = 1000;
-  Config::SetDefault ("ns3::TcpSocket::SegmentSize", UintegerValue (tcpSegmentSize));
-  Config::SetDefault ("ns3::TcpSocket::DelAckCount", UintegerValue (0));
-  Config::SetDefault ("ns3::TcpL4Protocol::SocketType", StringValue ("ns3::TcpNewReno"));
-//  Config::SetDefault ("ns3::RttEstimator::MinRTO", TimeValue (MilliSeconds (500)));
+int tcpSegmentSize = 1000;
+Config::SetDefault ("ns3::TcpSocket::SegmentSize", UintegerValue (tcpSegmentSize));
+Config::SetDefault ("ns3::TcpSocket::DelAckCount", UintegerValue (0));
+Config::SetDefault ("ns3::TcpL4Protocol::SocketType", StringValue ("ns3::TcpNewReno"));
 
-  unsigned int runtime = 20;   // seconds
-  int delayAC = 10;            // ms
-  int delayBC = 5;            // ms
-  int delayCD = 10;            // ms
-  double CDlinkBW = 1;    // Mbps
-  double linkBW = 1;          // Mbps
-  uint32_t queuesize = 1;
-  uint32_t maxBytes = 0;       // 0 means "unlimited"
+unsigned int runtime = 20;   // seconds
+int delayAC = 10;            // ms
+int delayBC = 5;             // ms
+int delayCD = 10;            // ms
+double CDlinkBW = 1;         // Mbps
+double linkBW = 1;           // Mbps
+uint32_t queuesize = 1;      // packets
+uint32_t maxBytes = 0;       // 0 means unlimited
 
+// Allow override from command line
+CommandLine cmd;
+cmd.AddValue("linkBW", "Bandwidth of A-C and B-C links (in Mbps)", linkBW);
+cmd.AddValue("CDlinkBW", "Bandwidth of C-D link (in Mbps)", CDlinkBW);
+cmd.AddValue("queuesize", "Queue size of C-D link (in packets)", queuesize);
+cmd.AddValue("runtime", "Simulation duration (in seconds)", runtime);
+cmd.Parse(argc, argv);
 
-  std::cout << "queuesize=" << queuesize << ", linkBW=" << linkBW << ", CDlinkBW=" << CDlinkBW << std::endl;
+// Optional debug output
+std::cout << "queuesize = " << queuesize 
+          << ", linkBW = " << linkBW 
+          << " Mbps, CDlinkBW = " << CDlinkBW 
+          << " Mbps" << std::endl;
+
 
 
   Ptr<Node> A = CreateObject<Node> ();
@@ -196,5 +225,13 @@ int main (int argc, char *argv[])
 
   Ptr<PacketSink> sink1 = DynamicCast<PacketSink> (sinkApp.Get (0));
   std::cout << "Total Bytes Received from sink: " << sink1->GetTotalRx () << std::endl;
+  std::cout << "\n=== Simulation Summary ===" << std::endl;
+  std::cout << "Simulation time: " << runtime << " s" << std::endl;
+  std::cout << "Link A-C / B-C Bandwidth: " << linkBW << " Mbps" << std::endl;
+  std::cout << "Link C-D Bandwidth: " << CDlinkBW << " Mbps" << std::endl;
+  std::cout << "C-D Queue Size: " << queuesize << " packets" << std::endl;
+  std::cout << "TCP Segment Size: " << tcpSegmentSize << " bytes" << std::endl;
+  std::cout << "Delays - A-C: " << delayAC << " ms, B-C: " << delayBC << " ms, C-D: " << delayCD << " ms" << std::endl;
+
   return 0;
 }
