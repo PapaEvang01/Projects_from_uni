@@ -39,7 +39,6 @@ To run with custom settings:
   ./waf --run "red --linkBW=6 --CDlinkBW=5 --queuesize=17 --runtime=20"
 */
 
-
 #include <iostream>
 #include <fstream>
 #include <string>

@@ -74,9 +74,6 @@ TraceCwnd ()    // Trace changes to the congestion window
 
 }
 
-
-
-
 int main (int argc, char *argv[])
 {
   // Set simulation parameters
@@ -108,14 +105,10 @@ std::cout << "queuesize = " << queuesize
           << " Mbps, CDlinkBW = " << CDlinkBW 
           << " Mbps" << std::endl;
 
-
-
   Ptr<Node> A = CreateObject<Node> ();
   Ptr<Node> B = CreateObject<Node> ();
   Ptr<Node> C = CreateObject<Node> ();
   Ptr<Node> D = CreateObject<Node> ();
-
-
 
   // use PointToPointChannel and PointToPointNetDevice
   NetDeviceContainer devAC, devBC, devCD;
@@ -150,8 +143,6 @@ std::cout << "queuesize = " << queuesize
     Ptr<NetDevice> Cdev3 = devCD.Get(0) ;
 
     Ptr<NetDevice> Ddev1 = devCD.Get(1) ;
-
-
 
   InternetStackHelper internet;
   internet.Install (A);
