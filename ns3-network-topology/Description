@@ -1,0 +1,63 @@
+🧪 NS-3 Network Simulation Projects
+This repository contains two educational NS-3 simulation projects that explore fundamental network topologies and traffic control mechanisms.
+
+🔌 Project 1: P2P with CSMA – First Taste of Network Topology in NS-3
+This project offers a first hands-on experience with network topology simulation using NS-3.
+It combines a Point-to-Point (P2P) connection with a CSMA-based Ethernet LAN, showcasing how different network links interact in a hybrid environment.
+
+📡 Topology Overview
+A P2P link connects two core nodes (n0 and n1)
+
+Node n1 also bridges a CSMA LAN with 20+ additional nodes
+
+A UDP Echo Server is hosted on n0
+
+A UDP Echo Client is placed on the last CSMA node (n21)
+
+Traffic flows from the LAN to the server via the P2P link
+
+⚙️ Configuration Highlights
+P2P Link: 14 Mbps, 10 ms delay
+
+CSMA LAN: 10 Mbps, 25.6 µs delay
+
+UDP Echo: 10 packets, 1024 bytes each, sent every 1 second
+
+🧪 What This Demonstrates
+Basic NS-3 simulation setup
+
+Hybrid topologies with P2P and Ethernet (CSMA)
+
+Automatic IP routing and packet forwarding
+
+Application-level communication with PCAP capture
+
+📡 Project 2: NS-3 TCP Simulation – DropTail vs RED Queuing
+This project simulates a 4-node TCP topology in NS-3 using C++ to compare the performance of two queue management disciplines:
+
+DropTail: Simple FIFO queue with tail drop
+
+RED: Active queue management that avoids congestion by early dropping
+
+🧬 Scenario Overview
+Nodes A and B send TCP bulk traffic to node D
+
+Node C is the central switch/router acting as a bottleneck
+
+The link between C–D is queue-limited and monitored
+
+Congestion window traces (*.cwnd) and throughput are recorded
+
+📁 Files
+original.cc → Uses DropTailQueue at the C–D link
+
+red.cc → Uses RedQueueDisc with tunable parameters (MinTh, MaxTh, QW, etc.)
+
+🧪 What This Demonstrates
+TCP NewReno behavior under queue stress
+
+Impact of RED vs DropTail on throughput and congestion control
+
+Trace analysis with congestion window evolution
+
+Modular design with command-line tunable parameters
