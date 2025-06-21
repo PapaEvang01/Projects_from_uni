@@ -110,8 +110,6 @@ int main (int argc, char *argv[])
   Ptr<Node> C = CreateObject<Node> ();
   Ptr<Node> D = CreateObject<Node> ();
  
-/// MY CODE
-
 // RED params
   //NS_LOG_INFO ("Set RED params");
   Config::SetDefault ("ns3::RedQueueDisc::MaxSize", StringValue ("1000p"));
@@ -122,7 +120,6 @@ int main (int argc, char *argv[])
   Config::SetDefault ("ns3::RedQueueDisc::MinTh", DoubleValue (2));
   Config::SetDefault ("ns3::RedQueueDisc::MaxTh", DoubleValue (8));
 
-//// END 
 
   // use PointToPointChannel and PointToPointNetDevice
   NetDeviceContainer devAC, devBC, devCD;
